@@ -6,6 +6,20 @@
 // Стили уже готовы: совпадут классы — карточка сразу будет выглядеть как в макете.
 // У картинки обязателен alt.
 
+import LikeButton from './LikeButton.jsx'
+
 export default function MemeCard(props) {
-  return <p>TODO: карточка мема «{props.title}»</p>;
+	return (
+		<article className='card'>
+			<img className='card__image' src={props.image} alt={props.title} />
+			<div className='card__body'>
+				<p className='card__title'>{props.title}</p>
+				<LikeButton
+					id={props.id}
+					initialLikes={props.likes}
+					liked={props.liked}
+				/>
+			</div>
+		</article>
+	)
 }
